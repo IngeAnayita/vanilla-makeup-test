@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Vanilla Makeup</title>
+    <link rel="stylesheet" href="../CSS/register.css">
+    <link rel="stylesheet" href="../CSS/Styles.css"> 
+</head>
+<body>
+    <header> 
+        <nav> 
+            <ul> 
+                <li><a href="../VIEW/index.html">Inicio</a></li>
+                <li><a href="../VIEW/products.html">Productos</a></li>
+                <li><a href="../VIEW/profile.html">Perfil</a></li>
+                <li><a href="../VIEW/recommendations.html">Recomendaciones</a></li>
+                <li><a href="../VIEW/chatbot.html">Chatbot</a></li>
+                <li><a href="../VIEW/login.html">Iniciar Sesión</a></li>
+                <li><a href="../VIEW/register.html">Registrarse</a></li>
+                <li class="notification-icon">
+                    <a href="../VIEW/notification-panel.html" id="notification-bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 1 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="notification-count">0</span>
+                    </a>
+                </li>
+            </ul> 
+        </nav> 
+    </header> 
+    <div id="app">
+        <form id="register-form">
+            <h1>Únete a Vanilla Makeup</h1>
+            <p>Crea tu cuenta para recibir recomendaciones personalizadas</p>
+            
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Nombre completo" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="skin_type" name="skin_type" placeholder="Tipo de piel (ej. mixta, seca, grasa)" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="occupation" name="occupation" placeholder="Ocupación" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="exposure_level" name="exposure_level" placeholder="Nivel de exposición (sol, polvo, agua)" required>
+            </div>
+
+            <button type="submit" id="register-btn">Registrarse</button>
+            <p id="error-message" style="display: none;"></p>
+        </form>
+    </div>
+
+    <script type="module" src="../VIEWMODEL/RegisterViewModel.js"></script>
+</body>
+</html>

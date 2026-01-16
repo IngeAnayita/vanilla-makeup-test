@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de Asesoría - Vanilla Makeup</title>
+    <link rel="stylesheet" href="../CSS/Chatbot.css">
+    <link rel="stylesheet" href="../CSS/Styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../VIEW/index.html">Inicio</a></li>
+                <li><a href="../VIEW/products.html">Productos</a></li>
+                <li><a href="../VIEW/profile.html">Perfil</a></li>
+                <li><a href="../VIEW/recommendations.html">Recomendaciones</a></li>
+                <li><a href="../VIEW/chatbot.html">Chatbot</a></li>
+                <li><a href="../VIEW/login.html">Iniciar Sesión</a></li>
+                <li><a href="../VIEW/register.html">Registrarse</a></li>
+                <li class="notification-icon">
+                    <a href="../VIEW/notification-panel.html" id="notification-bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 1 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="notification-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="app">
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <img src="../images/chatbot-avatar.png" alt="Asistente Vanilla">
+                </div>
+                <div class="chatbot-info">
+                    <h1>Asistente Virtual Vanilla</h1>
+                    <p class="status"><span class="status-indicator online"></span> En línea</p>
+                </div>
+                <button class="minimize-btn">−</button>
+            </div>
+            
+            <div class="chatbot-body">
+                <div class="chatbot-welcome">
+                    <p>¡Hola! Soy tu asistente de maquillaje personal. ¿En qué puedo ayudarte hoy?</p>
+                    <div class="quick-questions">
+                        <button class="quick-question" data-question="Recomiéndame productos para mi tipo de piel">Productos para mi piel</button>
+                        <button class="quick-question" data-question="¿Cómo aplicar base correctamente?">Técnicas de aplicación</button>
+                        <button class="quick-question" data-question="Consejos para piel mixta">Consejos de cuidado</button>
+                    </div>
+                </div>
+                
+                <div id="chat-output" class="chat-messages"></div>
+                
+                <div class="chatbot-controls">
+                    <div class="suggestions-container">
+                        <p>También puedes preguntar sobre:</p>
+                        <div class="suggestions">
+                            <span class="suggestion">tendencias 2025</span>
+                            <span class="suggestion">corrector para ojeras</span>
+                            <span class="suggestion">maquillaje resistente al agua</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-container">
+                        <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off">
+                        <button id="send-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                        <button class="voice-btn" id="voice-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2h-2v2a9 9 0 0 0 8 8.94V21h-2v2h6v-2h-2v-2.06A9 9 0 0 0 21 12v-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-footer">
+                <p>Respuestas en menos de 3 segundos • <span id="current-time"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plantillas para mensajes -->
+    <template id="user-message-template">
+        <div class="message user-message">
+            <div class="message-content"></div>
+            <div class="message-time"></div>
+        </div>
+    </template>
+    
+    <template id="bot-message-template">
+        <div class="message bot-message">
+            <div class="message-avatar">
+                <img src="../images/chatbot-avatar.png" alt="Asistente Vanilla">
+            </div>
+            <div class="message-content-container">
+                <div class="message-content"></div>
+                <div class="message-actions">
+                    <button class="action-btn like-btn">👍</button>
+                    <button class="action-btn dislike-btn">👎</button>
+                </div>
+                <div class="message-time"></div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="product-card-template">
+        <div class="product-card">
+            <img class="product-image" src="" alt="Producto recomendado">
+            <div class="product-info">
+                <h4 class="product-name"></h4>
+                <p class="product-description"></p>
+                <p class="product-price"></p>
+                <button class="btn-view-product">Ver producto</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="../VIEWMODEL/ChatbotViewModel.js"></script>
+</body>
+</html>

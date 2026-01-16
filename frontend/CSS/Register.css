@@ -1,0 +1,236 @@
+/* register.css - Versión mejorada */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header { 
+    background: linear-gradient(135deg, #8a4fff 0%, #5a3d7a 100%) !important;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    flex-grow: 1;
+}
+
+#register-form {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#register-form:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+}
+
+#register-form h1 {
+    color: #6a3093;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#register-form h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #8a4fff 0%, #5a3d7a 100%);
+    border-radius: 3px;
+}
+
+#register-form p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 15px;
+    cursor: pointer;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8a4fff;
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+#register-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #8a4fff 0%, #6a3093 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+#register-btn:hover {
+    background: linear-gradient(135deg, #7b3aff 0%, #5a2d80 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3);
+}
+
+#register-btn:active {
+    transform: translateY(0);
+}
+
+#error-message {
+    color: #ff4757;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgba(255, 71, 87, 0.1);
+    display: none;
+}
+
+/* Validación visual */
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #2ecc71;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #ff4757;
+}
+
+/* Tooltip para campos */
+.form-group {
+    position: relative;
+}
+
+.form-group .field-info {
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #register-form {
+        padding: 30px;
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+
+    #register-form h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #register-form {
+        padding: 25px 20px;
+    }
+
+    #register-btn {
+        padding: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+    }
+}

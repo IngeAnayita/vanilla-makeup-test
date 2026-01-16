@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones - Vanilla Makeup</title>
+    <link rel="stylesheet" href="../CSS/Styles.css">
+    <link rel="stylesheet" href="../CSS/Notifications.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../VIEW/index.html">Inicio</a></li>
+                <li><a href="../VIEW/products.html">Productos</a></li>
+                <li><a href="../VIEW/profile.html">Perfil</a></li>
+                <li><a href="../VIEW/recommendations.html">Recomendaciones</a></li>
+                <li><a href="../VIEW/chatbot.html">Chatbot</a></li>
+                <li><a href="../VIEW/login.html">Iniciar Sesión</a></li>
+                <li><a href="../VIEW/register.html">Registrarse</a></li>
+                <li class="notification-icon-container">
+                    <div class="notification-bell" id="notification-bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 1 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="notification-count">0</span>
+                        <div class="notification-dropdown">
+                            <div class="notification-dropdown-header">
+                                <h3>Notificaciones</h3>
+                                <div class="notification-actions">
+                                    <button id="mark-all-read">Marcar todas como leídas</button>
+                                </div>
+                            </div>
+                            <div class="notification-tabs">
+                                <button class="notification-tab active" data-tab="all">Todas</button>
+                                <button class="notification-tab" data-tab="productos">Productos</button>
+                                <button class="notification-tab" data-tab="tendencias">Tendencias</button>
+                                <button class="notification-tab" data-tab="consejos">Consejos</button>
+                            </div>
+                            <div class="notification-dropdown-content" id="notification-dropdown-content">
+                                <!-- Notificaciones se cargarán aquí dinámicamente -->
+                                <div class="empty-notifications">
+                                    <p>No tienes notificaciones nuevas</p>
+                                </div>
+                            </div>
+                            <div class="notification-dropdown-footer">
+                                <a href="../VIEW/notification-panel.html">Ver todas las notificaciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="app">
+        <div class="full-notification-panel">
+            <div class="notification-header">
+                <h1>Notificaciones</h1>
+                <div class="notification-actions">
+                    <button id="mark-all-read-full">Marcar todas como leídas</button>
+                    <button id="clear-notifications">Limpiar notificaciones</button>
+                </div>
+            </div>
+            
+            <div class="notification-tabs">
+                <button class="notification-tab active" data-tab="all">Todas</button>
+                <button class="notification-tab" data-tab="productos">Productos</button>
+                <button class="notification-tab" data-tab="tendencias">Tendencias</button>
+                <button class="notification-tab" data-tab="consejos">Consejos</button>
+            </div>
+            
+            <div class="notification-list" id="notification-list">
+                <!-- Notificaciones se cargarán aquí dinámicamente -->
+                <div class="empty-state">
+                    <img src="../images/notifications-empty.svg" alt="Sin notificaciones">
+                    <p>No tienes notificaciones nuevas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="notification-template">
+        <div class="notification-item" data-type="" data-read="false" data-id="">
+            <div class="notification-icon">
+                <span class="icon"></span>
+            </div>
+            <div class="notification-content">
+                <p class="notification-message"></p>
+                <div class="notification-meta">
+                    <span class="notification-time"></span>
+                    <span class="notification-category"></span>
+                </div>
+            </div>
+            <div class="notification-actions">
+                <button class="notification-action-btn important-btn">Importante</button>
+                <button class="notification-action-btn dismiss-btn">Descartar</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="../VIEWMODEL/NotificationViewModel.js"></script>
+</body>
+</html>

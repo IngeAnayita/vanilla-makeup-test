@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones - Vanilla Makeup</title>
+    <link rel="stylesheet" href="../CSS/Styles.css">
+    <link rel="stylesheet" href="../CSS/Recommendations.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../VIEW/index.html">Inicio</a></li>
+                <li><a href="../VIEW/products.html">Productos</a></li>
+                <li><a href="../VIEW/profile.html">Perfil</a></li>
+                <li><a href="../VIEW/recommendations.html">Recomendaciones</a></li>
+                <li><a href="../VIEW/chatbot.html">Chatbot</a></li>
+                <li><a href="../VIEW/login.html">Iniciar Sesión</a></li>
+                <li><a href="../VIEW/register.html">Registrarse</a></li>
+                <li class="notification-icon">
+                    <a href="../VIEW/notification-panel.html" id="notification-bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 1 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                        <span class="notification-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="app">
+        <h1>Recomendaciones Personalizadas</h1>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="skin-type">Tipo de piel:</label>
+                <select id="skin-type">
+                    <option value="">Selecciona tu tipo de piel</option>
+                    <option value="mixta">Mixta</option>
+                    <option value="seca">Seca</option>
+                    <option value="grasa">Grasa</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="exposure">Nivel de exposición:</label>
+                <select id="exposure">
+                    <option value="">Selecciona tu exposición</option>
+                    <option value="sol">Exposición al sol</option>
+                    <option value="agua">Exposición al agua</option>
+                    <option value="ambas">Ambas exposiciones</option>
+                </select>
+            </div>
+            
+            <button id="generate-btn">Generar Recomendaciones</button>
+        </div>
+        
+        <!-- Resultados de recomendaciones -->
+        <div id="recommendation-results"></div>
+        
+        <!-- Nueva sección educativa -->
+        <section class="educational-content">
+            <h2 class="section-title">
+                <span class="icon">📚</span> Guía Educativa de Cuidado de Piel
+            </h2>
+            
+            <div class="educational-tabs">
+                <button class="tab-button active" data-tab="tendencias">Tendencias 2025</button>
+                <button class="tab-button" data-tab="tecnicas">Técnicas de Aplicación</button>
+                <button class="tab-button" data-tab="cuidados">Cuidados Esenciales</button>
+                <button class="tab-button" data-tab="consecuencias">Consecuencias del Mal Uso</button>
+            </div>
+            
+            <div class="tab-content active" id="tendencias">
+                <h3><span class="emoji">✨</span> Últimas Tendencias en Maquillaje</h3>
+                <div class="content-grid">
+                    <article class="educational-card">
+                        <div class="card-header">
+                            <span class="badge skin-type">Para todos los tipos</span>
+                            <h4>Maquillaje Skinimalism</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>El minimalismo en maquillaje que prioriza el cuidado de la piel. Menos es más con productos multifuncionales que hidratan mientras maquillan.</p>
+                            <div class="card-footer">
+                                <span class="exposure-badge">🔆🌊</span>
+                                <a href="#" class="read-more">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="educational-card">
+                        <div class="card-header">
+                            <span class="badge skin-type">Piel mixta/grasa</span>
+                            <h4>Bases Matte 24H</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Nuevas fórmulas que controlan el brillo sin resecar, con protección solar y resistencia al agua para actividades intensas.</p>
+                            <div class="card-footer">
+                                <span class="exposure-badge">🔆🌊</span>
+                                <a href="#" class="read-more">Leer más</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Más tarjetas de tendencias -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="tecnicas">
+                <h3><span class="emoji">🎨</span> Técnicas Profesionales de Aplicación</h3>
+                <div class="video-gallery">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="../images/tecnicas-thumbnail.jpg" alt="Técnica de aplicación">
+                            <button class="play-button">▶</button>
+                        </div>
+                        <h4>Base Flawless en 5 pasos</h4>
+                        <p>Aprende a aplicar base como profesional para tu tipo de piel</p>
+                    </div>
+                    <!-- Más videos -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="cuidados">
+                <h3><span class="emoji">💆‍♀️</span> Rutinas Esenciales Según Tu Piel</h3>
+                <div class="skin-care-tips">
+                    <div class="tip-card">
+                        <h4>Piel Seca</h4>
+                        <ul>
+                            <li>Limpieza suave sin sulfatos</li>
+                            <li>Hidratación con ácido hialurónico</li>
+                            <li>Protección solar hidratante</li>
+                        </ul>
+                    </div>
+                    <!-- Tips para otros tipos de piel -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="consecuencias">
+                <h3><span class="emoji">⚠️</span> Riesgos y Prevención</h3>
+                <div class="warning-cards">
+                    <div class="warning-card">
+                        <h4>Dormir con maquillaje</h4>
+                        <p>Obstruye poros, causa brotes y acelera el envejecimiento. Siempre desmaquíllate!</p>
+                    </div>
+                    <!-- Más advertencias -->
+                </div>
+            </div>
+            
+            <div class="newsletter">
+                <h3><span class="emoji">✉️</span> Recibe más consejos en tu email</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <select>
+                        <option>Frecuencia: Semanal</option>
+                        <option>Quincenal</option>
+                        <option>Mensual</option>
+                    </select>
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="../VIEWMODEL/RecommendationViewModel.js"></script>
+    <script src="../VIEWMODEL/EducationalContentViewModel.js"></script>
+</body>
+</html>

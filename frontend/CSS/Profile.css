@@ -1,0 +1,97 @@
+/* profile.css */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #CC99FF;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #CC99FF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profile-info, #skin-analysis, #recommendations {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #CC99FF;
+    border-bottom: 2px solid #CC99FF;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+#analysis-results, #recommendation-list {
+    margin-top: 10px;
+}
+
+.recommendation-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+#logout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #CC99FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#logout-btn:hover {
+    background-color: #b366ff;
+}

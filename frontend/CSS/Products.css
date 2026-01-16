@@ -1,0 +1,367 @@
+/* Products.css - Versión modificada para coincidir con el estilo de otros HTML */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header y Nav igual que en los demás archivos */
+header {
+    background-color: #CC99FF;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para products.html */
+.header {
+    background-image: linear-gradient(
+        rgba(170, 91, 255, 0.2),
+        rgba(0, 0, 0, 0.2)),
+        url(../images/BackG.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+    margin-bottom: 30px;
+}
+
+.header-txt {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.header-txt h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.header-txt p {
+    font-size: 1.2em;
+    color: #ECEBEB;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.btn-1 {
+    display: inline-block;
+    background-color: #CC99FF;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.btn-1:hover {
+    background-color: #b366ff;
+}
+
+.products {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+h2 {
+    color: #CC99FF;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.products-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    color: #CC99FF;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.precio {
+    color: #8800ff !important;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.btn-2 {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #CC99FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-2:hover {
+    background-color: #b366ff;
+}
+
+/* Estilos para el carrito */
+.submenu #carrito {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(204, 153, 255, 0.9);
+    padding: 20px;
+    min-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.submenu:hover #carrito {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    color: white;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.borrar {
+    background-color: #8800ff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#vaciar-carrito {
+    background-color: #8800ff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#vaciar-carrito:hover {
+    background-color: #b366ff;
+}
+
+/* Footer */
+footer {
+    background-color: #CC99FF;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin: 15px;
+}
+
+footer p {
+    display: block !important;
+    visibility: visible !important;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    color: white;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-2 {
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.2);
+    transition: background-color 0.3s;
+}
+
+.social:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+
+.social img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product {
+        width: 45%;
+    }
+    
+    .header-txt h1 {
+        font-size: 2em;
+    }
+    
+    .header-txt p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .submenu #carrito {
+        min-width: 300px;
+        right: -50px;
+    }
+}
+
+.notification-icon {
+    position: relative;
+    margin-left: 15px;
+}
+
+.notification-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #5a3d7a;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0d4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.notification-icon .icon {
+    font-size: 1.2em;
+    color: #8a4fff;
+}
+
+.notification-content {
+    flex: 1;
+}

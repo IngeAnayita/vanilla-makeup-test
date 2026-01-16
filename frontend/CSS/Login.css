@@ -1,0 +1,146 @@
+/* login.css */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header { 
+    background: linear-gradient(135deg, #8a4fff 0%, #5a3d7a 100%) !important;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+#app {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #6a3093;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: #CC99FF;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(204, 153, 255, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0 20px 0;
+    background-color: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6a3093;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#error-message {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 14px;
+    display: none;
+}
+
+#app p {
+    color: #666;
+    margin-top: 20px;
+}
+
+#app a {
+    color: #8a2be2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+#app a:hover {
+    color: #6a3093;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #app {
+        padding: 30px 20px;
+        margin: 30px 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}

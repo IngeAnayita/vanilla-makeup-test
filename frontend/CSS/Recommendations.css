@@ -1,0 +1,646 @@
+/* Recommendations.css - Estilo completo para la página de recomendaciones */
+
+/* Estilos base */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #8a4fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #8a4fff, #b366ff);
+}
+
+/* Filtros */
+.filters {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: flex-end;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-group label {
+    margin-bottom: 10px;
+    color: #5a3d7a;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.filter-group select {
+    padding: 12px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #8a4fff;
+    box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.2);
+}
+
+#generate-btn {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #8a4fff 0%, #5a3d7a 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex: 0 0 auto;
+}
+
+#generate-btn:hover {
+    background: linear-gradient(135deg, #7b3aff 0%, #4a2f63 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3);
+}
+
+/* Resultados de recomendaciones */
+#recommendation-results {
+    margin-top: 20px;
+}
+
+.recommendation-section {
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.recommendation-section h2 {
+    color: #5a3d7a;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.recommendation-section h3 {
+    color: #8a4fff;
+    margin: 30px 0 20px;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recommendation-section h3::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: currentColor;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.care-section h3::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.makeup-section h3::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='21' r='1'%3E%3C/circle%3E%3Ccircle cx='20' cy='21' r='1'%3E%3C/circle%3E%3Cpath d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #8a4fff;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 79, 255, 0.1);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(138, 79, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 0;
+}
+
+.product-card p {
+    margin: 8px 0;
+    color: #555;
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+.product-card .product-name {
+    font-weight: 600;
+    color: #5a3d7a;
+    font-size: 1.1em;
+}
+
+.product-card .brand {
+    color: #8a4fff;
+    font-style: italic;
+}
+
+/* Efectos y animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.recommendation-section {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .filter-group {
+        min-width: 100%;
+    }
+    
+    #generate-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .recommendation-section {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .filter-group select, #generate-btn {
+        padding: 12px 15px;
+    }
+    
+    .recommendation-section h2 {
+        font-size: 1.5em;
+    }
+    
+    .recommendation-section h3 {
+        font-size: 1.2em;
+    }
+}
+
+/* Estilos para los iconos de exposición */
+.exposure-icon {
+    font-size: 1.2em;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Estilo para cuando no hay resultados */
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* EDUCATIONAL CONTENT SECTION */
+.educational-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-top: 50px;
+    border: 1px solid #f0f0f0;
+}
+
+.section-title {
+    color: #5a3d7a;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title .icon {
+    font-size: 1.2em;
+}
+
+/* Tabs Navigation */
+.educational-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    color: #555;
+}
+
+.tab-button:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-button.active {
+    background-color: #8a4fff;
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h3 {
+    color: #5a3d7a;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab-content h3 .emoji {
+    font-size: 1.2em;
+}
+
+/* Content Grid Styles */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.educational-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-left: 4px solid #8a4fff;
+}
+
+.educational-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 79, 255, 0.1);
+}
+
+.card-header {
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header h4 {
+    color: #5a3d7a;
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.badge.skin-type {
+    background-color: #e0d4ff;
+    color: #5a3d7a;
+}
+
+.card-body {
+    padding: 15px 20px;
+}
+
+.card-body p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.exposure-badge {
+    font-size: 1.2em;
+}
+
+.read-more {
+    color: #8a4fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.read-more:hover {
+    color: #5a3d7a;
+    text-decoration: underline;
+}
+
+/* Video Gallery Styles */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.video-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail {
+    position: relative;
+    height: 160px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(138, 79, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-card h4 {
+    padding: 15px 15px 5px;
+    color: #5a3d7a;
+    font-size: 1.1em;
+}
+
+.video-card p {
+    padding: 0 15px 15px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Skin Care Tips */
+.skin-care-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.tip-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #8a4fff;
+}
+
+.tip-card h4 {
+    color: #5a3d7a;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.tip-card ul {
+    padding-left: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.tip-card li {
+    margin-bottom: 8px;
+}
+
+/* Warning Cards */
+.warning-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.warning-card {
+    background-color: #fff8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #ff6b6b;
+}
+
+.warning-card h4 {
+    color: #d32f2f;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.warning-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Newsletter Form */
+.newsletter {
+    background-color: #f0eaff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.newsletter h3 {
+    color: #5a3d7a;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input,
+.newsletter-form select {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    min-width: 250px;
+    flex: 1;
+}
+
+.newsletter-form button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #8a4fff 0%, #5a3d7a 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: linear-gradient(135deg, #7b3aff 0%, #4a2f63 100%);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .educational-content {
+        padding: 25px;
+    }
+    
+    .content-grid,
+    .video-gallery,
+    .skin-care-tips,
+    .warning-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form select,
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

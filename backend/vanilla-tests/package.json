@@ -1,0 +1,28 @@
+{
+  "name": "vanilla-tests",
+  "version": "1.0.0",
+  "description": "Pruebas E2E para Vanilla Makeup",
+  "main": "test/test-setup.js",
+  "scripts": {
+    "test": "mocha test/flows/*.spec.js --timeout 40000",
+    "test:registration": "mocha test/flows/registrationFlow.spec.js --timeout 40000",
+    "test:chatbot": "mocha test/flows/chatbotFlow.spec.js --timeout 40000",
+    "test:ci": "set BROWSER=chrome& mocha test/flows/*.spec.js --timeout 60000",
+    "test:debug": "set DEBUG=selenium-webdriver& npm test",
+    "generate-report": "mocha test/flows/*.spec.js --reporter mochawesome --timeout 40000"
+  },
+  "keywords": [
+    "e2e",
+    "testing",
+    "selenium",
+    "vanilla-makeup"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.10.0"
+  }
+}

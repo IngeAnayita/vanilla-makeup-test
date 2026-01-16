@@ -1,0 +1,206 @@
+/* Styles.css */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header { 
+    background: linear-gradient(135deg, #8a4fff 0%, #5a3d7a 100%) !important;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#hero {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: #CC99FF;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #CC99FF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.cta-button:hover {
+    background-color: #b366ff;
+}
+
+#services {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#services h2 {
+    color: #CC99FF;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #CC99FF;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+}
+
+#testimonials {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#testimonials h2 {
+    color: #CC99FF;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial-cards .card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.testimonial-cards .card p {
+    font-style: italic;
+    color: #333;
+}
+
+.testimonial-cards .card span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #CC99FF;
+}
+
+
+footer {
+    background-color: #CC99FF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.notification-icon {
+    position: relative;
+    margin-left: 15px;
+}
+
+.notification-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #5a3d7a;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0d4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.notification-icon .icon {
+    font-size: 1.2em;
+    color: #8a4fff;
+}
+
+.notification-content {
+    flex: 1;
+}
